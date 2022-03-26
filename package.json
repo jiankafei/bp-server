@@ -1,0 +1,46 @@
+{
+  "name": "bp-server",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build-ts": "rimraf dist && npx tsc",
+    "watch-ts": "npx tsc -w",
+    "node": "node --trace-deprecation --inspect dist/server.js",
+    "nodemon": "nodemon --trace-deprecation --inspect dist/server.js",
+    "pm2-dev": "pm2 start ecosystem.config.js --no-daemon",
+    "pm2-prod": "pm2 start ecosystem.config.js --env production",
+    "pm2-stop": "pm2 stop bp-server",
+    "pm2-kill": "pm2 kill"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa-compress": "^4.0.3",
+    "@types/koa-static": "^4.0.2",
+    "@types/koa__router": "^8.0.8",
+    "@types/mime": "^2.0.3",
+    "@types/module-alias": "^2.0.1",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^10.0.0",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "ajv": "^8.6.2",
+    "chalk": "^4.1.2",
+    "dotenv": "^10.0.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-compress": "^5.1.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^6.3.0",
+    "mime": "^2.5.2",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.0.5",
+    "ora": "^5.4.1"
+  },
+  "_moduleAliases": {
+    "@src": "dist"
+  }
+}
